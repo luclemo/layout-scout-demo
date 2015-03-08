@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		link(href="http://fonts.googleapis.com/css?family=Lato:400,700|Oswald:300", rel="stylesheet", type="text/css")
+		link(rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css")
+		link(rel="stylesheet", href="css/style.css")
+		title Layout Scout | A visual aid for building responsive layouts
+	body
+		
+		// Header
+		header
+			.logo-container
+				img.layer-1(src="img/layer.svg")
+				img.layer-2(src="img/layer.svg")
+				img.layer-3(src="img/layer.svg")
+			h1 Layout Scout
+			p.tagline A visual aid for building responsive layouts
+			a.arrow(href="#intro") <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="5.0 -10.0 100.0 135.0" enable-background="new 0 0 100 100" xml:space="preserve" height="100px" width="100px">
+				<path d="M50,97.137c-1.402,0-2.786-0.371-4-1.072L12.106,76.497c-2.467-1.424-4-4.079-4-6.928V30.432c0-2.849,1.533-5.504,4-6.928  L46,3.935c2.429-1.402,5.571-1.402,8,0l33.894,19.568c2.467,1.424,4,4.079,4,6.928v39.137c0,2.849-1.533,5.504-4,6.928L54,96.065  C52.786,96.766,51.402,97.137,50,97.137z M50,6.863c-0.701,0-1.393,0.185-2,0.536L14.106,26.967c-1.234,0.712-2,2.04-2,3.464v39.137  c0,1.425,0.766,2.752,2,3.464L48,92.601c1.215,0.701,2.785,0.701,4,0l33.894-19.568c1.234-0.712,2-2.04,2-3.464V30.432  c0-1.425-0.766-2.752-2-3.464L52,7.399C51.393,7.048,50.701,6.863,50,6.863z"/>
+				<polygon points="66,57 50,73 34,57 37,54 48,65 48,27 52,27 52,65 63,54 "/>
+			</svg>
+		
+		// Intro
+		.wrapper
+			section#intro.intro
+				h2 Simple and smart
+				p With the click of a button, Layout Scout will sniff out the content blocks in your markup and inject random background colours to those blocks.<br>Click the button again, and the colours are removed.
+				.cta
+					a.btn.primary(href="#") Give it a spin
+					a.btn.secondary(href="#")<i class="fa fa-github-alt"></i> Get it on Github
+				
+				h4 We've all been there.
+				p As a front-end developer, chances are you create your markup and then hunt through your stylesheet (or dev tools) to apply <em>temporary</em> background colours to your content selectors.
+				p They serve as good visual feedback for styling your layouts and setting your media queries, but they waste time and require clean-up work when you're done. Also, they're ugly.
+			
+			// Pitches
+			section.pitches
+				div.pitch.pitch-click.row
+					.pitch-img
+						img(src="img/click.png")
+					.pitch-text
+						h3 A single click
+						p Toggle all of your content block background colours on and off with a single click. No more akward commenting/uncommenting in your stylesheets. Layout Scout is accessible through an unobtrusive button in the top right of your page.
+
+				div.pitch.pitch-colours.row
+					.pitch-img
+						img(src="img/colours.gif")
+					.pitch-text
+						h3 Smart and flexible
+						p No more <code>background:red</code><br>Layout Scout comes with four pleasing colour palettes for you to chose from.
+						ul		
+							li light colours (The default. Best for dark text on light bg)
+							li dark colours (Best for light text on a dark bg)
+							li monochrome light (Light shades of grey - Best for dark text on light bg)
+							li monochrome dark (Dark shades of grey Best for light text on dark bg)
+						p All colours are set as RGBA with transparency. This is incredibly useful for complex layouts with absolute positioning or z-index values; overlapping elements will never obscure the ones below.
+
+				div.pitch.pitch-code.row
+					.pitch-text
+						h3 Keeps your markup clean
+						p Layout Scout will not create any conflicts with your stylesheets. In fact, you will not have to touch any of your css or markup to implement the plugin. Simply load in the script, use it for the length of your development time, and remove it (or comment it out) when you're ready to deploy.
+					.pitch-img
+						img(src="img/code.png")
+			// Footer
+			footer
+				.row
+					.credits
+						p Made by 
+							a(href="http://lucaslemonnier.com") Lucas Lemonnier
+					.social
+						p
+							a(href="http://twitter.com/luclemo") <i class="fa fa-twitter fa-lg"></i> 
+							a(href="https://github.com/luclemo") <i class="fa fa-github-alt fa-lg"></i>
+
+	script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")
+	script(src="scripts/smoothscroll-min.js")
+	script(src="scripts/layoutscout-min.js")
+	script(src="scripts/scripts-min.js")

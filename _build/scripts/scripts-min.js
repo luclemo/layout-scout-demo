@@ -1,0 +1,1 @@
+$(function(){$("a.arrow").smoothScroll(),$().layoutScout({color:"darkColours"})});

@@ -1,0 +1,295 @@
+@import "setup"
+
+// -------------------------------------
+// Variables
+// -------------------------------------
+accent-dk = rgba(95, 45, 63, 1)
+accent-lt = rgba(182, 95, 163, 1.0)
+txt = rgba(182, 147, 162, 1)
+subtle = rgba(207, 105, 148, 0.68)
+
+// -------------------------------------
+// Mixins
+// -------------------------------------
+f-display(fz, ls=0.2rem)
+	font-family 'Oswald' sans-serif
+	font-size fz
+	text-transform uppercase
+	letter-spacing ls
+	font-weight 300
+
+f-body(fz=2.2rem, fw=400)
+	font-family 'Lato', sans-serif
+	font-weight fw
+	font-size fz
+	line-height 1.6
+	
+// -------------------------------------
+// keyframes
+// -------------------------------------
+@keyframes fadeInDown
+	0%
+		opacity 0
+		transform translate3d(0, -100%, 0)
+	100%
+		opacity 1
+		transform none
+
+@keyframes fadeIn
+	0%
+		opacity 0
+	100%
+		opacity 1
+		
+@keyframes fadeInRight
+	0%
+		opacity 0
+		transform translate3d(100%, 0, 0)
+
+	100%
+		opacity 1
+		transform: none;
+		
+@keyframes layer-right
+	0%
+		transform: translateX(-106px);
+	100%
+		transform: translate(-80px, 30px);
+		
+@keyframes layer-left
+	0%
+		transform: translateX(106px);
+	100%
+		transform: translate(80px, -30px);
+
+// -------------------------------------
+// Global Styles
+// -------------------------------------
+html
+	font-size 10px
+	-webkit-font-smoothing antialiased
+	
+body
+	f-body()
+	color txt
+	background accent-dk
+
+h1
+	f-display(8rem, 1.3rem)
+	color	accent-lt // Fallback for Firefox
+	background-image -webkit-linear-gradient(135deg, rgba(249,122,122,1) 20%,rgba(163,87,175,1) 80%)
+	-webkit-background-clip text
+	-webkit-text-fill-color transparent
+	margin-bottom 2rem
+	
+h2
+	f-display(5rem)
+	
+h3
+	f-display(4rem)
+
+h4
+	f-body(2.2rem, 700)
+	
+p
+	f-body()
+	
+a
+	text-decoration none
+	color subtle
+	&:focus
+		outline none
+	
+.btn
+	text-align center
+	font-size 2rem
+	border-radius 5px
+	border 1px solid
+	padding 1rem 2rem
+	min-width 200px
+	max-width 300px
+	display inline-block
+	margin 0 2%
+	transition all .2s
+	background-image linear-gradient(135deg, rgba(249, 122, 122, 0.21) 0, rgba(163, 87, 175, 0.29) 100%)
+	border-color rgba(125, 60, 76, 1)
+	color rgba(255, 255, 255, 0.5)
+	&:hover
+		background-image none
+		border-color: txt;
+		color: txt;
+	i
+		margin-right 10px
+	
+
+code,
+kbd,
+pre,
+samp {
+	font-family monospace, serif
+	font-size 1em
+	background darken(accent-dk, 20%)
+	padding: 0.4rem
+	margin 0 0.4rem
+	border-radius 3px
+}
+
+// -------------------------------------
+// Layout
+// -------------------------------------
+.wrapper
+	max-width 1400px
+	padding 0 5%
+	margin 0 auto
+	
+.row
+	width 100%
+	&:after
+		visibility hidden 
+		display block
+		font-size 0
+		content " "
+		clear both
+		height 0
+
+// -------------------------------------
+// Header
+// -------------------------------------
+header
+	padding 20rem 5%
+	text-align center
+	background rgba(255,255,255,1)
+	height 100vh
+	position relative
+
+p.tagline
+	f-body(2.8rem)
+	color subtle
+
+// Logo --------------------------------	
+.logo-container
+	animation fadeIn .3s forwards
+	opacity 0
+	animation-delay 0.5s
+	
+.logo-container img
+	position relative
+	animation-delay 0.7s
+
+.layer-1
+	animation layer-left .3s linear forwards
+	transform translateX(106px)
+	z-index 10
+		
+.layer-2
+	z-index 5
+	
+.layer-3
+	animation layer-right .3s linear forwards
+	transform translateX(-106px)
+	z-index 1
+		
+// Title --------------------------------
+h1
+	animation fadeIn 1s forwards
+	animation-delay 0.8s
+	opacity 0
+	// animation-duration 1s
+	// animation-fill-mode both
+		
+.tagline
+	animation fadeInRight 0.5s forwards
+	animation-delay 1s
+	opacity 0
+		
+// Arrow ------------------
+a.arrow
+	position: absolute;
+	bottom: 1rem;
+	transform: translateX(-50%);
+	left: 50%;
+	animation fadeIn 0.5s forwards
+	animation-delay 2s
+	opacity 0
+
+	svg
+		transform scale(0.5)
+		path
+		polygon
+			fill: accent-lt
+		
+
+// -------------------------------------
+// Intro
+// -------------------------------------
+.intro
+	padding 3rem 10%
+	text-align center
+	margin-bottom 6rem
+
+	p:nth-of-type(1)
+		f-body(2.8rem)
+
+.cta
+	margin 8rem 0
+
+// -------------------------------------
+// Pitches
+// -------------------------------------		
+.pitch
+	border-bottom 2px solid darken(accent-dk, 20%)
+	// padding-bottom 2rem
+	padding 8rem 0
+	position relative
+	
+	&:first-child
+		border-top 2px solid darken(accent-dk, 20%)
+		
+	&:nth-of-type(odd) .pitch-img
+		right 0
+		
+	&:nth-of-type(odd) .pitch-text
+		float left
+		
+.pitch-img
+	width 30%
+	position absolute
+	top 50%
+	transform translateY(-50%)
+
+.pitch-text
+	width 60%
+	float right
+
+.pitch-code .pitch-img
+	width 338px
+	img
+		width 100%
+		
+.pitch-click .pitch-img
+	height 230px
+	text-align center
+	img
+		height 100%
+// -------------------------------------
+// Footer
+// -------------------------------------		
+.credits
+.social
+	display inline-block
+
+.credits
+	float left
+	p
+		font-size 2rem
+
+.social
+	float right	
+	
+	.fa
+		font-size 3rem
+		
+	.fa-twitter
+		margin-right 15px
+
+@import "layoutscout"
