@@ -240,6 +240,17 @@ a:focus {
 .btn i {
   margin-right: 10px;
 }
+@media (max-width: 580px) {
+  .btn {
+    display: block;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 580px) {
+  .primary {
+    margin-bottom: 3rem;
+  }
+}
 code,
 kbd,
 pre,
@@ -268,7 +279,7 @@ samp {
   height: 0;
 }
 header {
-  padding: 20rem 5%;
+  padding: 15rem 5%;
   text-align: center;
   background: #fff;
   height: 100vh;
@@ -328,7 +339,6 @@ h1 {
 }
 a.arrow {
   position: absolute;
-  bottom: 1rem;
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -350,14 +360,28 @@ a.arrow svg polygon {
 }
 .intro {
   padding: 3rem 10%;
-  text-align: center;
   margin-bottom: 6rem;
+}
+@media (max-width: 1030px) {
+  .intro {
+    padding: 3rem 0;
+  }
 }
 .intro p:nth-of-type(1) {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-size: 2.8rem;
   line-height: 1.6;
+}
+@media (max-width: 480px) {
+  .intro p:nth-of-type(1) {
+    font-size: 2.4rem;
+  }
+}
+.intro h2,
+.intro h4,
+.intro .cta {
+  text-align: center;
 }
 .cta {
   margin: 8rem 0;
@@ -367,39 +391,62 @@ a.arrow svg polygon {
   padding: 8rem 0;
   position: relative;
 }
+@media (max-width: 780px) {
+  .pitch {
+    padding: 3rem 0;
+  }
+}
 .pitch:first-child {
   border-top: 2px solid #4c2432;
 }
 .pitch:nth-of-type(odd) .pitch-img {
-  right: 0;
+  float: right;
 }
 .pitch:nth-of-type(odd) .pitch-text {
   float: left;
 }
 .pitch-img {
   width: 30%;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
+  position: relative;
+  top: 50px;
+  margin-right: 5%;
+  float: left;
+}
+@media (max-width: 780px) {
+  .pitch-img {
+    width: 100%;
+    margin: 0;
+    float: none;
+    top: 0;
+    text-align: center;
+  }
+}
+.pitch-img img {
+  max-width: 100%;
 }
 .pitch-text {
   width: 60%;
   float: right;
 }
-.pitch-code .pitch-img {
-  width: 338px;
-}
-.pitch-code .pitch-img img {
-  width: 100%;
+@media (max-width: 780px) {
+  .pitch-text {
+    width: 100%;
+    margin: 0;
+    float: none;
+  }
 }
 .pitch-click .pitch-img {
   height: 230px;
   text-align: center;
 }
 .pitch-click .pitch-img img {
-  height: 100%;
+  max-height: 100%;
+}
+@media (max-width: 780px) {
+  .pitch-code img {
+    max-width: 60%;
+    text-align: center;
+  }
 }
 .credits,
 .social {

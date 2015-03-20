@@ -120,6 +120,13 @@ a
 		color: txt;
 	i
 		margin-right 10px
+	@media (max-width: 580px)
+		display block
+		margin 0 auto
+		
+.primary
+	@media (max-width: 580px)
+		margin-bottom 3rem
 	
 
 code,
@@ -156,7 +163,7 @@ samp {
 // Header
 // -------------------------------------
 header
-	padding 20rem 5%
+	padding 15rem 5%
 	text-align center
 	background rgba(255,255,255,1)
 	height 100vh
@@ -205,7 +212,6 @@ h1
 // Arrow ------------------
 a.arrow
 	position: absolute;
-	bottom: 1rem;
 	transform: translateX(-50%);
 	left: 50%;
 	animation fadeIn 0.5s forwards
@@ -224,11 +230,18 @@ a.arrow
 // -------------------------------------
 .intro
 	padding 3rem 10%
-	text-align center
+	// text-align center
 	margin-bottom 6rem
+	@media (max-width: 1030px)
+		padding: 3rem 0
 
 	p:nth-of-type(1)
 		f-body(2.8rem)
+		@media (max-width: 480px)
+			font-size 2.4rem
+		
+	h2, h4, .cta
+		text-align center
 
 .cta
 	margin 8rem 0
@@ -241,36 +254,51 @@ a.arrow
 	// padding-bottom 2rem
 	padding 8rem 0
 	position relative
+	@media (max-width: 780px)
+		padding 3rem 0
 	
 	&:first-child
 		border-top 2px solid darken(accent-dk, 20%)
 		
 	&:nth-of-type(odd) .pitch-img
-		right 0
+		float right
 		
 	&:nth-of-type(odd) .pitch-text
 		float left
 		
 .pitch-img
 	width 30%
-	position absolute
-	top 50%
-	transform translateY(-50%)
+	position relative
+	top 50px
+	margin-right 5%
+	float left
+	@media (max-width: 780px)
+		width 100%
+		margin 0
+		float none
+		top 0
+		text-align center
+	img
+		max-width 100%
 
 .pitch-text
 	width 60%
 	float right
-
-.pitch-code .pitch-img
-	width 338px
-	img
+	@media (max-width: 780px)
 		width 100%
+		margin 0
+		float none
 		
 .pitch-click .pitch-img
 	height 230px
 	text-align center
 	img
-		height 100%
+		max-height 100%
+		
+.pitch-code img
+	@media (max-width: 780px)
+		max-width 60%
+		text-align center
 // -------------------------------------
 // Footer
 // -------------------------------------		
