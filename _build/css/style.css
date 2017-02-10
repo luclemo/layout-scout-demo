@@ -171,7 +171,7 @@ body {
   background: #5f2d3f;
 }
 h1 {
-  font-family: 'Oswald' sans-serif;
+  font-family: 'Oswald', sans-serif;
   font-size: 8rem;
   text-transform: uppercase;
   letter-spacing: 1.3rem;
@@ -183,14 +183,14 @@ h1 {
   margin-bottom: 2rem;
 }
 h2 {
-  font-family: 'Oswald' sans-serif;
+  font-family: 'Oswald', sans-serif;
   font-size: 5rem;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
   font-weight: 300;
 }
 h3 {
-  font-family: 'Oswald' sans-serif;
+  font-family: 'Oswald', sans-serif;
   font-size: 4rem;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
